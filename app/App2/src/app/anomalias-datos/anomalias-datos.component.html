@@ -1,0 +1,60 @@
+
+
+<!--<button type="button" class="btn btn-primary" (click)="obtenerAnomaliaConstraints(); obtenerAnomaliaDatos(); obtenerTriggers(); obtenerHijosSinPadres();">Identificar Anomalía de Datos</button>
+
+<button type="button" class="btn btn-primary" (click)="obtenerAnomaliaConstraints(); obtenerAnomaliaDatos(); obtenerTriggers();">Identificar Anomalía de Datos</button>
+-->
+<h2>3) Chequeo automático de las anomalias de los datos  </h2>  
+<div style="padding-top: 30px" class="container-fluid table-sm">
+  <div *ngIf="datosConstraints.length != 0" class="row">
+    <div class="col-12" style="padding-right: 5px">
+      <div >
+        <div >
+          <h5 >La tabla muestra las anomalías de datos relacionadas con violación de Constraints</h5>
+        </div>
+      </div>
+    </div>
+      </div>
+    <div *ngIf="datosConstraints.length != 0" class="row">
+    <div class="col-12 table-responsive">
+      <app-tabla [cabeceras]="cabecerasConstraints" [datos]="datosConstraints"></app-tabla>
+    </div>
+  </div>
+</div>
+
+<div style="padding-top: 30px" class="container-fluid table-sm">
+  <div *ngIf="datosAnomaliaDatos.length != 0" class="row">
+    <div class="col-12" style="padding-right: 5px">
+      <div >
+        <div >
+          <h5 >La tabla muestra inconsistencia de datos en relaciones necesarias</h5>
+        </div>
+      </div>
+    </div>
+    </div>
+      <div *ngIf="datosAnomaliaDatos.length != 0" class="row">
+    <div class="col-12 table-responsive">
+      <app-tabla [cabeceras]="cabecerasAnomaliaDatos" [datos]="datosAnomaliaDatos"></app-tabla>
+    </div>
+  </div>
+</div>
+
+<div style="padding-top: 30px" class="container-fluid table-sm">
+  <div *ngIf="datosTriggers.length != 0" class="row">
+    <div class="col-12" style="padding-right: 5px">
+      <div >
+        <div >
+          <h5 >La tabla muestra el detalle de los Triggers de la base</h5>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div *ngIf="datosTriggers.length != 0" class="row">
+    <div class="col-12 table-responsive">
+      <app-tabla [cabeceras]="cabecerasTriggers" [datos]="datosTriggers"></app-tabla>
+    </div>
+  </div>
+</div>
+
+
+

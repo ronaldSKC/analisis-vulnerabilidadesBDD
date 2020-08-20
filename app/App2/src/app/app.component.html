@@ -1,0 +1,79 @@
+<!--
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <p class="lead display-4">Auditoría SQL Server</p>
+  </div>
+  <div class="row justify-content-center align-items-center shadow bg-white rounded mb-5 pb-2 pt-2">
+    <div class="col-sm-3">
+      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true" >Anomalías de relaciones</a>
+        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false" >Anomalías en la definición de IR</a>
+        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false" >Anomalías de datos</a>
+         <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false" >Log</a>
+       <!-- <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Log</a>
+      </div>
+    </div>
+    <div class="col-sm-5">
+      <div class="tab-content text-center" id="v-pills-tabContent">
+        <div class="tab-pane fade lead" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">Chequeo automático de las anomalías de los datos
+          <a class="btn btn-outline-primary d-block w-25 align-self-center" routerLink="/anomalias-datos" routerLinkActive="active">Mostrar</a>
+        </div>
+        <div class="tab-pane fade lead" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">Generación de log personalizado para cada caso
+          <a class="btn btn-outline-primary d-block w-25 align-self-center" routerLink="/log" routerLinkActive="active">Mostrar</a>
+        </div>
+        <div class="tab-pane fade show active lead" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">Identificación automática de las relaciones que requieren integridad referencial, que existen y que deberían existir
+          <a class="btn btn-outline-primary d-block w-25 align-self-center" routerLink="/anomalias-relaciones" routerLinkActive="active">Mostrar</a>
+        </div>
+        <div class="tab-pane fade lead" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">Chequeo automático de anomalías en la definición de la integridad referencial para insercion, eliminación y actualización de información
+          <a class="btn btn-outline-primary d-block w-25 align-self-center" routerLink="/anomalias-integridad" routerLinkActive="active">Mostrar</a>
+        </div>
+        
+        
+      </div>
+    </div>
+  </div>
+  </div>-->
+
+
+ <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <a class="navbar-brand" href="#">Auditoría SQL Server</a>
+    <ul class="navbar-nav mr-auto">
+      
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/anomalias-relaciones">Anomalías de relaciones</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/anomalias-integridad">Anomalías en la definición de IR</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/anomalias-datos">Anomalías de datos</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/log">Log</a>
+      </li>
+    </ul>
+    
+  </div>
+</nav> 
+
+<div *ngIf="titulo==undefined"  class="card">
+<h1>TRABAJO 3</h1>
+<p>Implementar una aplicacion que realice las siguientes actividades de Auditoria de Bases de Datos para SQL Server: </p>
+<ol>
+<li>Identificacion automatica de las relaciones que requieren integridad referencial, que existen y que deberian existirIdentificacion automatica de las relaciones que requieren integridad referencial, que existen y que deberian existir.</li>
+<li>Chequeo automatico de anomalias en la definicion de la integridad referencial para insercion, eliminacion y actualizacion de informacion.</li>  
+<li>Chequeo automático de las anomalias de los datos.</li> 
+<li>Generacion de log personalizado para cada caso.</li> 
+</ol>
+<p>Grupo N°3
+<br>
+Cabrera Kevin, <br>
+Cardenas David,<br>
+Cargua Ronald,<br>
+Cisneros Paul
+</p>
+</div>
+  <router-outlet></router-outlet>
+
+

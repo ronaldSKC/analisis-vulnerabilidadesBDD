@@ -1,0 +1,15 @@
+<table class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th *ngFor="let cabecera of cabeceras; let indice = index" scope="col" style="color: #fff; background-color: #337ab7; border-color: #337ab7;">{{cabecera}}</th>
+    </tr>
+  </thead>
+  <tbody>
+   <tr [ngClass]="{'table-danger':atributo[7]==true,
+                   'table-warning':atributo[7]==false && atributo[6]==true,
+                   'table-success':atributo[7]==false && atributo[6]==false}"
+       *ngFor="let atributo of atributos; let indice = index">
+     <td *ngFor="let valor of atributos[indice]" scope="row">{{valor}}</td>
+   </tr>
+  </tbody>
+</table>

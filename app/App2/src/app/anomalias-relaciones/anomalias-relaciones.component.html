@@ -1,0 +1,73 @@
+<!--<button type="button" class="btn btn-primary" (click)="obtenerRelacionesExistentes(); obtenerRelacionesRequierenIR(); obtenerTablasSuletas(); obtenerRelacionesDeberianExistir()">Identificar Anomalías de Relaciones</button>
+-->
+<h2> 1) Identificacion automatica de las relaciones que requieren integridad referencial, que existen y que deberian existir </h2>
+<div style="padding-top: 30px" class="container-fluid table-sm">
+  <div *ngIf="datosRE.length != 0;" class="row">
+
+    <div class="col-12" style="padding-right: 5px">
+      <div >
+        <div >
+          <h5 >Tabla relaciones existentes <button class="btn btn-primary" (click)="hideme = !hideme">Más información</button></h5>
+          <p [hidden]="hideme">La tabla muestra las relaciones existentes en la Base de Datos. Muestra el nombre de la Foreign Key, las tablas con las respectivas columnas que poseen dicha Foreign Key, así como la tabla y columnas a la que hacen referencia</p>
+        </div>
+      </div>
+    </div>
+    </div>
+     <div *ngIf="datosRE.length != 0;" class="row">
+    <div class="col-12 table-responsive">
+      <app-tabla [cabeceras]="cabecerasRE" [datos]="datosRE"></app-tabla>
+    </div>
+  </div>
+
+  <div *ngIf="datosIR.length != 0" style="padding-top: 30px" class="row">
+    <div class="col-12" style="padding-right: 5px">
+      <div >
+        <div >
+        <h5 >Tabla con posibles problemas entre tablas y relaciones existentes </h5>
+
+          <p class="card-text">La tabla muestra los posibles problemas que existen en las diversas relaciones de la Base de Datos. En este sentido, pueden existir CONSTRAINTS que se encuentren deshabilitados o datos inconsistentes que no han sido chequeados por dichos CONSTRAINTS. Tiene el siguiente código de colores: </p>
+          <p style="font-size: 14px"><span class="badge badge-success">Éxito</span> Relación habilitada y no hay inconsistencias</p>
+          <p style="font-size: 14px"><span class="badge badge-warning">Advertencia</span> Posible inconsistencia de datos</p>
+          <p style="font-size: 14px"><span class="badge badge-danger">Peligro</span> Relación deshabilitada</p>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div *ngIf="datosIR.length != 0"  class="row">
+    <div class="col-12 table-responsive">
+      <app-tabla [cabeceras]="cabecerasIR" [datos]="datosIR"></app-tabla>
+    </div>
+  </div>
+
+  <div *ngIf="datosTS.length != 0 && datosTS != null" style="padding-top: 30px" class="row">
+    <div class="col-12" style="padding-right: 5px">
+      <div >
+        <div >
+          <h5>La tabla muestra las tablas sueltas</h5>
+        </div>
+      </div>
+    </div>
+    </div>
+      <div *ngIf="datosTS.length != 0 && datosTS != null" style="padding-top: 30px" class="row">
+
+    <div class="col-12 table-responsive">
+      <app-tabla [cabeceras]="cabecerasTS" [datos]="datosTS"></app-tabla>
+    </div>
+  </div>
+  <div *ngIf="datosDE.length != 0 && datosDE != null" style="padding-top: 30px" class="row">
+    <div class="col-12" style="padding-right: 5px">
+      <div >
+        <div >
+          <h5 >La tabla muestra las relaciones que deberían existir</h5>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div *ngIf="datosDE.length != 0 && datosDE != null" style="padding-top: 30px" class="row">
+    <div class="col-12 table-responsive">
+      <app-tabla [cabeceras]="cabecerasDE" [datos]="datosDE"></app-tabla>
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,30 @@
+<button type="button" class="btn btn-primary" (click)="obtenerAnomaliaIR()">Identificar Anomalías de IR</button>
+<div style="padding-top: 30px" class="container-fluid table-sm">
+  <div *ngIf="datos.length != 0" class="row">
+    <div class="col-4" style="padding-right: 5px">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Descripción</h5>
+          <p class="card-text">La tabla muestra si existe alguna acción que se realice cuando se ejecuta un UPDATE o DELETE</p>
+          <ul>
+            <li><b>SET NULL:</b>
+              Los datos secundarios se establecen en NULL cuando se eliminan o actualizan los datos princiapales.
+            </li>
+            <li><b>CASCADE:</b>
+              Los datos secundarios se eliminan o actualizan cuando se eliminan o actualizan los datos principales
+            </li>
+            <li><b>SET DEFAULT:</b>
+              Los datos secundarios se establecen en sus valores por defecto cuando se eliminan o actualizan los datos principales
+            </li>
+            <li><b>NO ACTION:</b>
+              No se realiza ninguna acción con los datos secundarios cuando se eliminan o se actualizan los datos principales
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-8 table-responsive">
+      <app-tabla [cabeceras]="cabeceras" [datos]="datos"></app-tabla>
+    </div>
+  </div>
+</div>

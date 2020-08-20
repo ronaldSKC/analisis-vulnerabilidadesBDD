@@ -1,0 +1,52 @@
+<button type="button" class="btn btn-primary" (click)="obtenerAnomaliaConstraints(); obtenerAnomaliaDatos(); obtenerTriggers(); obtenerHijosSinPadres();">Identificar Anomalía de Datos</button>
+
+<div style="padding-top: 30px" class="container-fluid table-sm">
+  <div *ngIf="datosConstraints.length != 0" class="row">
+    <div class="col-4" style="padding-right: 5px">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Descripción</h5>
+          <p class="card-text">La tabla muestra las anomalías de datos relacionadas con violación de Constraints</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-8 table-responsive">
+      <app-tabla [cabeceras]="cabecerasConstraints" [datos]="datosConstraints"></app-tabla>
+    </div>
+  </div>
+</div>
+
+<div style="padding-top: 30px" class="container-fluid table-sm">
+  <div *ngIf="datosAnomaliaDatos.length != 0" class="row">
+    <div class="col-4" style="padding-right: 5px">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Descripción</h5>
+          <p class="card-text">La tabla muestra inconsistencia de datos en relaciones necesarias</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-8 table-responsive">
+      <app-tabla [cabeceras]="cabecerasAnomaliaDatos" [datos]="datosAnomaliaDatos"></app-tabla>
+    </div>
+  </div>
+</div>
+
+<div style="padding-top: 30px" class="container-fluid table-sm">
+  <div *ngIf="datosTriggers.length != 0" class="row">
+    <div class="col-4" style="padding-right: 5px">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Descripción</h5>
+          <p class="card-text">La tabla muestra el detalle de los Triggers de la base</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-8 table-responsive">
+      <app-tabla [cabeceras]="cabecerasTriggers" [datos]="datosTriggers"></app-tabla>
+    </div>
+  </div>
+</div>
+
+
+
